@@ -1,0 +1,1 @@
+javac -encoding utf-8 -d bin src/lab4/*.java --module-path "C:/Users/kr1stoffers/Desktop/t/fx/lib/javafx-sdk-21.0.2/lib" --add-modules javafx.graphics,javafx.controls,javafx.fxml && java --class-path "bin;lib/sqlite-jdbc-3.43.0.0.jar" --module-path "C:/Users/kr1stoffers/Desktop/t/fx/lib/javafx-sdk-21.0.2/lib" --add-modules javafx.graphics,javafx.controls,javafx.fxml lab4.App
