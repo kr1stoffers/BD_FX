@@ -1,0 +1,147 @@
+create table student
+(
+    student_id integer primary key not null ,
+
+    surname    text    not null ,
+    name       text    not null ,
+    stipend    integer ,
+    kurs       integer ,
+    city       text ,
+    birthday   text ,
+    univ_id    integer
+);
+
+insert into student
+values
+    (1, 'Иванов', 'Иван', 150, 1, 'Орел', '3/12/1982', 10);
+insert into student
+values
+    (3, 'Петров', 'Петр', 200, 3, 'Курск', '1/12/1980', 10);
+insert into student
+values
+    (6, 'Сидоров', 'Вадим', 150, 4, 'Москва', '7/06/1979', 22);
+insert into student
+values
+    (10, 'Кузнецов', 'Борис', 0, 2, 'Брянск', '8/12/1981', 10);
+insert into student
+values
+    (12, 'Зайцева', 'Ольга', 250, 2, 'Липецк', '1/05/1981', 10);
+insert into student
+values
+    (32, 'Котов', 'Павел', 150, 5, 'Белгород', '', 14);
+create table lecturer
+(
+    lecturer_id integer primary key not null ,
+
+    surname     text ,
+    name        text ,
+    city        text ,
+    univ_id     integer
+);
+
+insert into lecturer
+values
+    (24, 'Колесников', 'Борис', 'Воронеж', 10);
+insert into lecturer
+values
+    (48, 'Никонов', 'Иван', 'Воронеж', 10);
+insert into lecturer
+values
+    (74, 'Лагутин', 'Павел', 'Москва', 22);
+insert into lecturer
+values
+    (108, 'Струков', 'Николай', 'Москва', 22);
+insert into lecturer
+values
+    (276, 'Николаев', 'Виктор', 'Воронеж', 10);
+create table subject
+(
+    subj_id   integer primary key not null ,
+    subj_name text ,
+    hour      integer ,
+    semester  integer
+);
+insert into subject
+values
+    (10, 'Информатика', 56, 1);
+insert into subject
+values
+    (22, 'Физика', 34, 1);
+insert into subject
+values
+    (43, 'Математика', 56, 2);
+insert into subject
+values
+    (46, 'История', 34, 4);
+insert into subject
+values
+    (73, 'Физкультура', 34, 5);
+create table university
+(
+    univ_id   integer primary key not null ,
+
+    univ_name text ,
+    rating    integer ,
+    city      text
+);
+
+insert into university
+values
+    (10, 'ВГУ', 296, 'Воронеж');
+insert into university
+values
+    (11, 'НГУ', 345, 'Новосибирск');
+insert into university
+values
+    (14, 'БГУ', 326, 'Белгород');
+insert into university
+values
+    (15, 'ТГУ', 368, 'Томск');
+insert into university
+values
+    (18, 'ВГМА', 327, 'Воронеж');
+insert into university
+values
+    (22, 'МГУ', 606, 'Москва');
+create table exam_marks
+(
+    exam_id    integer primary key not null ,
+
+    student_id integer ,
+    subj_id    integer ,
+    mark       integer ,
+    exam_date  text
+);
+
+insert into exam_marks
+values
+    (34, 32, 10, 4, '23/01/2000');
+insert into exam_marks
+values
+    (43, 6, 22, 4, '18/01/2000');
+insert into exam_marks
+values
+    (75, 55, 10, 5, '05/01/2000');
+insert into exam_marks
+values
+    (145, 12, 10, 5, '12/01/2000');
+insert into exam_marks
+values
+    (238, 12, 73, 3, '17/06/1999');
+insert into exam_marks
+values
+    (639, 55, 22, 2, '22/06/1999');
+create table subj_lect
+(
+    lecturer_id integer ,
+    subj_id     integer
+);
+insert into subj_lect
+values
+    (24, 22);
+insert into subj_lect
+values
+    (48, 46);
+insert into subj_lect
+values
+    (74, 73);
